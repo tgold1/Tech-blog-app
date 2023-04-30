@@ -18,7 +18,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/Blogpost');
     } else {
-      alert('Failed to create project');
+      alert('Failed to create Blogpost');
     }
   }
 };

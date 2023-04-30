@@ -40,7 +40,7 @@ router.get('/Blogpost/:id', async (req, res) => {
 
     const Blogpost = blogpostData.get({ plain: true });
 
-    res.render('project', {
+    res.render('Blogpost', {
       ...Blogpost,
       logged_in: req.session.logged_in
     });
@@ -53,7 +53,7 @@ router.get('/Blogpost/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Blogpost }],
     });
