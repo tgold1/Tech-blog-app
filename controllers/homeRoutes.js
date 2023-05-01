@@ -4,8 +4,9 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const blogpostData = await Blogpost.findAll({
+    console.log("Hello World")
+    //Get all projects and JOIN with user data
+   const blogpostData = await Blogpost.findAll({
       include: [
         {
           model: User,
@@ -13,16 +14,18 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-
+    console.log(blogpostData)
     // Serialize data so the template can read it
-    const Blogpost = blogpostData.map((Blogpost) => Blogpost.get({ plain: true }));
-
+     const blogData = blogpostData.map((Blogpost) => Blogpost.get({ plain: true }));
+    //res.render('homepage')
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      Blogpost, 
-      logged_in: req.session.logged_in 
+     blogData, 
+     //logged_in: req.session.logged_in 
     });
-  } catch (err) {
+  } catch (err)
+   {
+    console.log(err)
     res.status(500).json(err);
   }
 });
