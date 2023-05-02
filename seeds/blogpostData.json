@@ -13,7 +13,7 @@
     "contents": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
     "username": "Lernantino",
     "date": "5/1/2023",
-    "user_id": 1
+    "user_id": 2
   },
   {
     "id": 3,
@@ -21,6 +21,15 @@
     "contents": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
     "username": "Amiko24",
     "date": "5/1/2023",
-    "user_id": 1
+    "user_id": 3
+  },
+  {
+    "id": 4,
+    "posttitle": "Model View Controller",
+    "contents": "A file structure that has models, views (using handlebars), and controllers better known as routes.",
+    "username": "Amiko24",
+    "date": "5/2/2023",
+    "user_id": 3
   }
 ]
+

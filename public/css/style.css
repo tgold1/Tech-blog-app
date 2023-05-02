@@ -16,7 +16,10 @@ header, .project:not(:last-child) {
   color: #065b83;
   text-decoration: underline;
 }
-
+div.navbar-nav a {
+  display: inline-block;
+  padding: 2px;
+}
 .dollar-amount {
   color: #056605;
   font-weight: bold;
