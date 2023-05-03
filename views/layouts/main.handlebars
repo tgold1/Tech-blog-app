@@ -12,41 +12,42 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-        <div class="flex-column">
+      <div class="flex-column">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Home <span class="sr-only"></span></a>
                 
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="/homepage">Home <span class="sr-only"></span></a>
-                        <a class="nav-item nav-link" href="/Dashboard">Dashboard</a>
-                    
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/Dashboard">Dashboard</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-                </div>
-                </div>
-                <h1>The Tech Blog!</h1>
-            </nav>
+
+                <!-- Conditionally render login or logout links -->
+                {{#if logged_in}}
+                <a href="/Dashboard">Dashboard</a> |
+                <button class="no-button" id="logout">Logout</button>
+                {{else}}
+                <a href="/login">Login</a>
+                {{/if}}
+              </div>
+            </div>
+            <h1>The Tech Blog!</h1>
+          </nav>
         </header>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
+
+
+
+       
     </main>
-    <footer>
-      
-    </footer>
   </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>

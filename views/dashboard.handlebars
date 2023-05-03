@@ -1,5 +1,6 @@
-<!-- Loop over each object in the blogpost array -->
-{{#each blogData as |post| }}
+<div class="text-center">
+  <h2>{{username}}</h2>
+  {{#each Blogposts as |post| }}
 <div class="row mb-4 Blogpost">
   <div class="col-md-5">
     <h2>
@@ -9,7 +10,7 @@
       <span class="Blogpost-contents">{{post.contents}}</span>
       
     </p>
-    <p>Created by {{post.user.username}} on {{format_date post.date}}</p>
+    <p>Created by {{post.username}} on {{format_date post.date}}</p>
   </div>
   <div class="col-md-7">
     <p>
@@ -18,4 +19,8 @@
   </div>
 </div>
 {{/each}}
+  <p>
+    <button class="btn btn-primary">New Post!</button>
+  </p>
+</div>
 {{log this}}
