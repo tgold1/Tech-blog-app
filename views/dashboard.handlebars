@@ -1,26 +1,54 @@
-<div class="text-center">
-  <h2>{{username}}</h2>
-  {{#each Blogposts as |post| }}
-<div class="row mb-4 Blogpost">
-  <div class="col-md-5">
-    <h2>
-      <a href="/homepage/{{post.id}}">{{post.username}}</a>
-    </h2>
-    <p>
-      <span class="Blogpost-contents">{{post.contents}}</span>
-      
-    </p>
-    <p>Created by {{post.username}} on {{format_date post.date}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{post.contents}}
-    </p>
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
-{{/each}}
-  <p>
-    <button class="btn btn-primary">New Post!</button>
-  </p>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Blogpost:</h3>
+
+    <form class="form new-Blogpost-form">
+      <div class="form-group">
+        <label for="Blogpost-posttitle">post title:</label>
+        <input class="form-input" type="text" id="Blogpost-posttitle" name="Blogpost-posttitle" />
+      </div>
+      <div class="form-group">
+        <label for="Blogpost-contents">contents:</label>
+        <input class="form-input" type="text" id="Blogpost-contents" name="Blogpost-contents" />
+      </div>
+      <div class="form-group">
+        <label for="Blogpost-username">username:</label>
+        <textarea class="form-input" id="Blogpost-username" name="Blogpost-username"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="Blogpost-date">date:</label>
+        <textarea class="form-input" id="Blogpost-date" name="Blogpost-date"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">New Post</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if Blogpost.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Blogposts:</h3>
+
+    {{#each Blogpost as |Blogpost|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/Blogpost/{{Blogpost.id}}">{{Blogpost.posttitle}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{Blogpost.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
 </div>
+
+<script src="./js/profile.js"></script>
+
 {{log this}}

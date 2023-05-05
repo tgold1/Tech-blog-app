@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/Blogpost');
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to create Blogpost');
     }
@@ -32,7 +32,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/Blogpost');
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to delete Blogpost');
     }
