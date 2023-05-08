@@ -3,7 +3,7 @@
 <div class="row mb-4 Blogpost">
   <div class="col-md-5">
     <h2>
-      <a href="/homepage/{{post.id}}">{{post.posttitle}} by {{post.username}}</a>
+      <a href="/Blogpost/{{post.id}}">{{post.posttitle}} by {{post.username}}</a>
     </h2>
     <p>
       <span class="Blogpost-contents">{{post.contents}}</span>
@@ -18,7 +18,7 @@
   </div>
 </div>
 <div class="row mb-4 post">
-  <a class="btn btn-primary" href="/Blogpost/:id" role="button">Comment</a>
+  <a class="btn btn-primary" href="/Blogpost/{{post.id}}" role="button">Comment</a>
    <div class="form-group">
         <label for="Blogpost-comments">comments:</label>
         <input class="form-input" type="text" id="Blogpost-comments" name="Blogpost-comments" />

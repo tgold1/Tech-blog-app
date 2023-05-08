@@ -24,10 +24,13 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
+  if(event.target.matches(".btn-danger")) {
+
+  
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/dashboard/${id}`, {
+    const response = await fetch(`/api/Blogpost/${id}`, {
       method: 'DELETE',
     });
 
@@ -37,6 +40,7 @@ const delButtonHandler = async (event) => {
       alert('Failed to delete Blogpost');
     }
   }
+}
 };
 
 document
@@ -44,5 +48,5 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.Blogpost-list')
+  .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
