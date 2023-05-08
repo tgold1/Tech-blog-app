@@ -1,6 +1,24 @@
 <div class="row">
+  {{log this}}
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, {{username}}!</h2>
+     {{#if Blogposts.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Blogposts:</h3>
+
+    {{#each Blogposts as |Blogpost|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/dashboard/{{Blogpost.id}}">{{Blogpost.posttitle}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{Blogpost.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
   </div>
 </div>
 
