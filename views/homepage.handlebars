@@ -3,26 +3,11 @@
 <div class="row mb-4 Blogpost">
   <div class="col-md-5">
     <h2>
-      <a href="/Blogpost/{{post.id}}">{{post.posttitle}} by {{post.username}}</a>
+      <a href="/Blogpost/{{post.id}}">{{post.posttitle}}</a>
     </h2>
-    <p>
-      <span class="Blogpost-contents">{{post.contents}}</span>
-      
-    </p>
     <p>Created by {{post.user.username}} on {{format_date post.date}}</p>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{post.contents}}
-    </p>
-  </div>
-</div>
-<div class="row mb-4 post">
-  <a class="btn btn-primary" href="/Blogpost/{{post.id}}" role="button">Comment</a>
-   <div class="form-group">
-        <label for="Blogpost-comments">comments:</label>
-        <input class="form-input" type="text" id="Blogpost-comments" name="Blogpost-comments" />
-      </div>
-</div>
+</div> 
+
 {{/each}}
 {{log this}}

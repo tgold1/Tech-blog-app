@@ -7,20 +7,31 @@
 {{log this}}
 
 
-  <div class="col-md-6 project-list">
-    <h3>Current Blogposts:</h3>
+<div class="col-md-6 project-list">
+  <h3>Current Blogposts:</h3>
 
-    
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/Blogpost/{{id}}">{{posttitle}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+
+  <div class="row mb-2">
+    <div class="col-md-8">
+      <h4><a href="/Blogpost/{{id}}"></a></h4>
+      <h4>{{posttitle}}</h4>
+      <p>
+        <span class="Blogpost-contents">{{contents}}</span>
+
+      </p>
+      <p>Created by {{post.user.username}}</p> 
+    </div>
+    <div class="row mb-4 post">
+      <a class="btn btn-primary" href="/Blogpost/{{id}}" role="button">Comment</a>
+      <div class="form-group">
+        <label for="Blogpost-comments">comments:</label>
+        <input class="form-input" type="text" id="Blogpost-comments" name="Blogpost-comments" />
+          <p>Created by {{comment.user.username}}</p> 
       </div>
     </div>
-    
   </div>
+
 </div>
+
 
 <script src="./js/profile.js"></script>
